@@ -6,6 +6,15 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors:{
+      "customPurple":"#802BB1",
+      "customDarkPurple":"#2D283E",
+      "customGray":"#564F6F",
+      "customDarkGray":"#4C495D",
+      "customWhite":"#D1D7E0",
+      
+    }
+    
   },
   plugins: [],
 }
