@@ -1,5 +1,6 @@
 <script setup >
 import Carrusel from "./components/Carrusel.vue"
+import Searchbar from "./components/Searchbar.vue"
 
 
 </script>
@@ -8,6 +9,7 @@ import Carrusel from "./components/Carrusel.vue"
   
     <body> 
         <carrusel/>
+        <searchbar/>
     </body>
 </template>
 
