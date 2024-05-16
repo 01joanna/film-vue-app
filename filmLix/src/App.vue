@@ -1,8 +1,9 @@
 <script >
   import HeaderFeature from "./components/HeaderFeature.vue"
+  import Card from "./components/Card.vue"
   import Carrusel from "./components/Carrusel.vue"
   export default{
-    components:{ HeaderFeature }
+    components:{ HeaderFeature , Card }
   }
 </script>
 
@@ -10,7 +11,9 @@
   <HeaderFeature/>
     <body> 
         <carrusel/>
+        <Card/>
     </body>
+    
 </template>
 
 <style >
