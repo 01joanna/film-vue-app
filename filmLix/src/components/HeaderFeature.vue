@@ -48,8 +48,3 @@
     }
 </script>
 
-
-
-<style>
-
-</style>

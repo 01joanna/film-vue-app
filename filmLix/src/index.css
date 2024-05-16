@@ -19,7 +19,7 @@
 
     .burgerMenu{
         @apply text-customWhite text-4xl cursor-pointer md:hidden block mx-2
-    }
+    } 
 
     
 
