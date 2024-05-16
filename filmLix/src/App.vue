@@ -1,16 +1,18 @@
-<script setup >
-import Carrusel from "./components/Carrusel.vue"
-import Searchbar from "./components/Searchbar.vue"
-
-
+<script >
+  import HeaderFeature from "./components/HeaderFeature.vue"
+  import Carrusel from "./components/Carrusel.vue"
+  import Searchbar from "./components/Searchbar.vue"
+  export default {
+    components: { HeaderFeature, Carrusel, Searchbar }
+  }
 </script>
 
 <template>
-  
-    <body> 
-        <carrusel/>
+  <HeaderFeature/>
+    <body class="flex flex-col justify-center">
         <searchbar/>
-    </body>
+        <carrusel/>
+      </body>
 </template>
 
 <style >
