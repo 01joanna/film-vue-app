@@ -1,8 +1,9 @@
 <script >
   import HeaderFeature from "./components/HeaderFeature.vue"
   import Carrusel from "./components/Carrusel.vue"
+  import Footer from "./components/Footer.vue"
   export default{
-    components:{ HeaderFeature, Carrusel }
+    components:{ HeaderFeature, Carrusel,Footer}
   }
 </script>
 
@@ -11,6 +12,8 @@
     <body>
         <carrusel/>
     </body>
+  <Footer/>
+  
 </template>
 
 <style >
