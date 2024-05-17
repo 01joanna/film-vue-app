@@ -24,6 +24,9 @@
         @apply bg-customDarkPurple text-customWhite
     
     }
+    .footer{
+        @apply tracking-wide hover:scale-95 mx-4 my-4
+    }
 
 
 }

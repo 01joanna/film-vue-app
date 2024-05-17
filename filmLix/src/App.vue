@@ -2,8 +2,9 @@
   import HeaderFeature from "./components/HeaderFeature.vue"
   import Carrusel from "./components/Carrusel.vue"
   import Searchbar from "./components/Searchbar.vue"
+  import Footer from "./components/Footer.vue"
   export default {
-    components: { HeaderFeature, Carrusel, Searchbar }
+    components: { HeaderFeature, Carrusel, Searchbar, Footer}
   }
 </script>
 
@@ -19,6 +20,7 @@
       </section>
 
       </body>
+      <Footer />
 </template>
 
 <style >
