@@ -3,19 +3,19 @@
     
         <nav class="md:flex md:justify-between md:items-center py-3 lg:px-28 bg-customGray">
             <div class=" mx-4 flex justify-between items-center">
-                <a href="">
+                <RouterLink to="/">
                     <img src="../assets/filmlix_logo.png" alt="">
                     <h2 class="uppercase md:text-center text-2xl font-light text-customWhite logoText">filmlix</h2>
-                </a>
+                </RouterLink>
                 <span>
                     <i class="fa-solid fa-bars burgerMenu" name="menu" @click="burgerMenuFunc()"></i>
                 </span>
             </div>
             <ul class="headerUl">
-                <li class="myLi "><a href="">My movies</a></li>
-                <li class="myLi "><a href="">Genres</a></li>
-                <li class="myLi "><a href="">Lists</a></li>
-                <li class="myLi"><a href="">Random</a></li>
+                <li class="myLi "><RouterLink active-class="active" to="/myMovies">My movies</RouterLink></li>
+                <li class="myLi "><RouterLink active-class="active" to="/genres">Genres</RouterLink></li>
+                <li class="myLi "><RouterLink active-class="active" to="/lists">Lists</RouterLink></li>
+                <li class="myLi"><RouterLink active-class="active" to="/random">Random</RouterLink></li>
                 
             </ul>
             
@@ -36,8 +36,9 @@
             burgerMenuFunc(){
                 let list = document.querySelector("ul")
                 if(this.toggleMenu == false){
-                    list.style = "opacity:1"
+                    list.style = "opacity:100"
                     this.toggleMenu = true
+                    
                 } else if(this.toggleMenu !== false){
                     list.style = "opacity:0"
                     this.toggleMenu = false
