@@ -13,7 +13,7 @@
         <carrusel/>
     </body>
   <Footer/>
-  
+ 
 </template>
 
 <style >
