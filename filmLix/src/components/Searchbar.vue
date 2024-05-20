@@ -1,6 +1,6 @@
 <template>
     <div class="searchbar w-full flex">
-        <font-awesome-icon :icon="['fal', 'magnifying-glass']" style="color: #ffffff;" />
+        <!-- <font-awesome-icon :icon="['fal', 'magnifying-glass']" style="color: #ffffff;" /> -->
         <input 
         type="text" 
         placeholder="Search for movies"
