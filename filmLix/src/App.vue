@@ -3,7 +3,7 @@
   import Carrusel from "./components/Carrusel.vue"
   import Footer from "./components/Footer.vue"
   export default{
-    components:{ HeaderFeature, Carrusel,Footer}
+    components:{ HeaderFeature, Carrusel,Footer }
   }
 </script>
 
@@ -12,8 +12,7 @@
     <body>
         <carrusel/>
     </body>
-  <Footer/>
- 
+    <Footer/>
 </template>
 
 <style >
