@@ -4,9 +4,9 @@
       <Searchbar />
       <Carrusel />
     </section>
-    <section class="secondHomepage mx-20 flex flex-col gap-8 mb-20">
+    <section class="secondHomepage flex flex-col gap-5 mb-20 justify-center items-center">
       <h3 class="text-[40px] text-customWhite">What's new</h3>
-      <div v-if="movies" class="grid grid-cols-4 gap-4 mx-20">
+      <div v-if="movies" class="grid lg:grid-cols-4 gap-10 md:grid-cols-2">
         <Card v-for="movie in movies" :key="movie.id" :movie="movie" />
       </div>
     </section>

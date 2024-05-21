@@ -9,7 +9,7 @@
                     <i class="fa-solid fa-bars burgerMenu" name="menu" @click="burgerMenuFunc()"></i>
                 </span>
             </div>
-            <ul class="headerUl">
+            <ul class="headerUl z-20">
                 <li class="myLi "><RouterLink active-class="active" to="/myMovies">My movies</RouterLink></li>
                 <li class="myLi "><RouterLink active-class="active" to="/genres">Genres</RouterLink></li>
                 <li class="myLi "><RouterLink active-class="active" to="/lists">Lists</RouterLink></li>
