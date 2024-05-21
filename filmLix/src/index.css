@@ -16,11 +16,15 @@
         
     }
     .myLi{
-        @apply uppercase md:text-base text-customWhite tracking-wide hover:scale-95 delay-150 mx-4 my-6 md:my-0 text-2xl
+        @apply uppercase md:text-base text-customWhite tracking-wide active:scale-95 mx-4 my-6 md:my-0 text-2xl
     }
     .burgerMenu{
         @apply text-customWhite text-4xl cursor-pointer md:hidden block mx-2
     } 
+
+    .active {
+        @apply border-b-2  pb-1
+    }
     
     /* FOOTER */
     .footer{
@@ -32,7 +36,7 @@
         @apply h-80 w-44 bg-customWhite rounded-lg 
     }
     .cardIcon{
-        @apply opacity-70 hover:opacity-100
+        @apply opacity-70 hover:opacity-100 text-customBlack cursor-pointer
     }
 
 
