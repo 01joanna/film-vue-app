@@ -1,6 +1,4 @@
 <template>
-    
-    
         <nav class="md:flex md:justify-between md:items-center py-3 lg:px-28 bg-customGray">
             <div class=" mx-4 flex justify-between items-center">
                 <RouterLink to="/">
@@ -20,7 +18,6 @@
             </ul>
             
         </nav>
-  
 </template>
 
 
