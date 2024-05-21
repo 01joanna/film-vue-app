@@ -2,6 +2,7 @@
 <script setup>
 import { RouterView, RouterLink } from 'vue-router';
 import HeaderFeature from "./components/HeaderFeature.vue"
+import Footer from "./components/Footer.vue"
 </script>
 
 <template>
@@ -9,6 +10,7 @@ import HeaderFeature from "./components/HeaderFeature.vue"
   <main>
     <RouterView />
   </main>
+  <Footer/>
   
 </template>
 

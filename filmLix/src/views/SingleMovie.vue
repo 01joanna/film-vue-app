@@ -1,31 +1,54 @@
 <template>
-    <section>
-        <div class="singleCard"></div>
-        <div class="cardDescription text-white">
-            <div class="title flex flex-col gap-2">
-                <h2 class="text-[60px] font-bold">Lost in Translation</h2>
-                <div class="flex gap-10 text-sm">
-                    <p>2003</p>
-                    <p>Directed by Sofia Coppola</p>
+    <section class="w-full flex gap-10 justify-center my-20" v-if="movie">
+        <div class="singleCard">
+            <Card :movie="movie" class="w-[300px] h-auto" />
+        </div>
+        <div class="cardDescription text-white flex flex-col gap-10">
+            <div class="title flex flex-col leading-tight">
+                <h2 class="text-[60px] font-bold">{{ movie.Title }}</h2>
+                <div class="flex gap-10 text-md">
+                    <p>{{ movie.Year }}</p>
+                    <p>Directed by {{ movie.Director }}</p>
                 </div>
             </div>
-            <div class="description flex flex-col gap-8">
-                <p>Two lost souls visiting Tokyo – the young, neglected wife of a photographer and a washed-up movie star shooting a TV commercial – find an odd solace and pensive freedom to be real in each other’s company, away from their lives in America.</p>
-                <p class="text-xs">102 minutes</p>
+            <div class="description flex flex-col gap-2 w-[500px]">
+                <p>{{ movie.Plot }}</p>
+                <p class="text-xs">{{ movie.Runtime }}</p>
             </div>
-            <div class="movieDetails">
-                <div class="movieGenre flex flex-col gap-10">
-                    <p class="font-bold">Genres</p>
-                    <p>Comedy, Drama</p>
-                </div>
-                <div class="movieActors flex flex-col gap-10">
-                    <p class="font-bold">Actors</p>
-                    <p>Bill Murray</p>
-                </div>
+            
+            <div class="grid grid-cols-2 grid-rows-2 w-[400px] text-sm">
+                <div class="font-bold">Genres</div>
+                <div class="col-start-1 row-start-2 font-bold">Actors</div>
+                <div class="col-start-2 row-start-1">{{ movie.Genre }}</div>
+                <div>{{ movie.Actors }}</div>
             </div>
+    
         </div>
     </section>
 </template>
 
-<script></script>
+<script>
+import Card from '../components/Card.vue';
+
+export default {
+    components: { Card },
+    props: ['id'],
+    data() {
+        return {
+            movie: null
+        };
+    },
+    mounted() {
+        fetch(`http://localhost:3000/movies/${this.id}`)
+            .then(response => response.json())
+            .then(data => {
+                this.movie = data;
+            })
+            .catch(error => {
+                console.error('Error fetching movie data:', error);
+            });
+    }
+};
+</script>
+
 <style scoped></style>
