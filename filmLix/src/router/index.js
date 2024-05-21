@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AboutView from '../views/AboutView.vue'
+import SingleMovie from '../views/SingleMovie.vue'
 import GenresView from '../views/GenresView.vue'
 import ListsView from '../views/ListsView.vue'
 import MyMovies from '../views/MyMoviesView.vue'
@@ -35,9 +35,10 @@ const router = createRouter({
       component: Random
     },
     {
-      path: '/about/:id',
-      name: 'about',
-      component: AboutView
+      path: '/movie/:id',
+      name: 'Movie Details',
+      component: SingleMovie,
+      props: true
     },
 
 

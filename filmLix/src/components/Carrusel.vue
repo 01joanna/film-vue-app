@@ -38,7 +38,7 @@ export default defineComponent({
 
 <style scoped>
 .carousel__item {
-  width: 100%;
+  width: 80%;
   height: 500px; 
   object-fit: cover;
   margin: 2.5rem 2.5rem 0rem; 
