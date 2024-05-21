@@ -9,11 +9,12 @@
                     <i class="fa-solid fa-bars burgerMenu" name="menu" @click="burgerMenuFunc()"></i>
                 </span>
             </div>
-            <ul class="headerUl z-20">
-                <li class="myLi "><RouterLink active-class="active" to="/myMovies">My movies</RouterLink></li>
-                <li class="myLi "><RouterLink active-class="active" to="/genres">Genres</RouterLink></li>
-                <li class="myLi "><RouterLink active-class="active" to="/lists">Lists</RouterLink></li>
-                <li class="myLi"><RouterLink active-class="active" to="/random">Random</RouterLink></li>
+            <ul class="headerUl">
+                <li class="myLi "><a href="">All movies</a></li>
+                <li class="myLi "><a href="">My movies</a></li>
+                <li class="myLi "><a href="">Genres</a></li>
+                <li class="myLi "><a href="">Lists</a></li>
+                <li class="myLi"><a href="">Random</a></li>
                 
             </ul>
             
