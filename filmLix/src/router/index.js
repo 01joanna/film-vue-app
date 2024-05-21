@@ -36,7 +36,7 @@ const router = createRouter({
     },
     {
       path: '/movie/:id',
-      name: 'Movie Details',
+      name: 'MovieDetails',
       component: SingleMovie,
       props: true
     },
