@@ -12,6 +12,7 @@
                 </span>
             </div>
             <ul class="headerUl">
+                <li class="myLi "><a href="">All movies</a></li>
                 <li class="myLi "><a href="">My movies</a></li>
                 <li class="myLi "><a href="">Genres</a></li>
                 <li class="myLi "><a href="">Lists</a></li>
