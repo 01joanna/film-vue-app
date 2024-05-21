@@ -36,7 +36,7 @@
         <searchbar/>
         <carrusel/>
       </section>
-      < <section class="secondHomepage mx-20 flex flex-col gap-8 my-20">
+      <section class="secondHomepage mx-20 flex flex-col gap-8 mb-20">
       <h3 class="text-[40px] text-customWhite">What's new</h3>
       <div v-if="movies" class="grid grid-cols-4 gap-4 mx-20">
         <Card v-for="movie in movies" :key="movie.id" :movie="movie" />
