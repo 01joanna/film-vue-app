@@ -41,8 +41,8 @@ export default defineComponent({
   width: 100%;
   height: 500px; 
   object-fit: cover;
-  margin: 5rem 5rem 0rem; 
-  border-radius: 5rem;
+  margin: 2.5rem 2.5rem 0rem; 
+  border-radius: 2rem;
 }
 
 </style>
