@@ -5,6 +5,7 @@ import GenresView from '../views/GenresView.vue'
 import ListsView from '../views/ListsView.vue'
 import MyMovies from '../views/MyMoviesView.vue'
 import Random from '../views/RandomMovie.vue'
+import AllMovies from '../views/AllMovies.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -18,6 +19,11 @@ const router = createRouter({
       path: '/myMovies',
       name: 'myMovies',
       component: MyMovies
+    },
+    {
+      path: '/allMovies',
+      name: 'allMovies',
+      component: AllMovies
     },
     {
       path: '/genres',

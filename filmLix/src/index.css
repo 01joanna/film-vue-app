@@ -42,11 +42,11 @@
 
     /* LISTS */
     .listTitle{
-        @apply text-[28px] italic mb-4 text-customWhite 
+        @apply lg:text-[28px] italic  text-customWhite 
     }
 
     .listCardsDiv{
-        @apply grid grid-cols-4 gap-4 items-center justify-center
+        @apply  grid lg:grid-cols-4 gap-y-4 gap-x-[100px] md:grid-cols-2 /* grid grid-cols-4 gap-x-8 gap-y-4 items-center justify-between */
     }
 
 

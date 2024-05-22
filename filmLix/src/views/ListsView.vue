@@ -3,40 +3,67 @@
         <section>
             <Searchbar />
         </section>
-        <section class="secondHomepage mx-44 mt-4 flex flex-col gap-8 mb-20">
-            <h3 class="text-[40px] text-customWhite">Lists</h3>
+        
+        <section class="flex flex-col gap-5  mb-20 justify-center px-28 items-center ">
+            <h3 class="text-[40px] text-customWhite w-full pl-6 text-left">Lists</h3>
+            
+            <!-- Comfort Movies LIST -->
             <section class="mb-6">
-                <h3 class="listTitle">Comfort Movies</h3>
+                <div class="flex justify-between items-top mb-5">
+                   <h3 class="listTitle">Comfort Movies</h3> 
+                   <button v-if="this.comfortMoviesMore == true" class=" pb-0  h-1" @click="loadMore('comfort')">more</button>
+                   <button v-if="this.comfortMoviesMore == false" class=" pb-0 h-1" @click="loadLess('comfort')">less</button>
+                </div>
                 <div v-if="comfortMovies" class="listCardsDiv">
-                    <Card v-for="movie in comfortMovies" :key="movie.id" :movie="movie" />
+                    <Card v-for="movie in comfortMovies.slice(0, comfortMoviesCount)" :key="movie.id" :movie="movie" />
                 </div>
             </section>
 
+            <!-- Visually Insane LIST -->
             <section class="mb-6">
-                <h4 class="listTitle">Visually Insane</h4>
+                <div class="flex justify-between items-top mb-5">
+                    <h4 class="listTitle">Visually Insane</h4>
+                    <button v-if="this.visuallyInsaneMore == true" class=" pb-0 h-1" @click="loadMore('insane')">more</button>
+                    <button v-if="this.visuallyInsaneMore == false" class=" pb-0 h-1" @click="loadLess('insane')">less</button>
+                </div>
                 <div v-if="visuallyInsane" class="listCardsDiv">
-                    <Card v-for="movie in visuallyInsane" :key="movie.id" :movie="movie" />
+                    <Card v-for="movie in visuallyInsane.slice(0, visuallyInsaneCount)" :key="movie.id" :movie="movie" />
                 </div>
             </section>
 
+            <!-- Neverending Christmas LIST -->
             <section class="mb-6">
-                <h4 class="listTitle">Neverending Christmas</h4>
+                <div class="flex justify-between items-top mb-5">
+                    <h4 class="listTitle">Neverending Christmas</h4>
+                    <button v-if="this.neverendingChristmasMore == true" class=" pb-0 h-1" @click="loadMore('christmas')">more</button>
+                    <button v-if="this.neverendingChristmasMore == false" class=" pb-0 h-1" @click="loadLess('christmas')">less</button>
+                </div>
                 <div v-if="neverendingChristmas" class="listCardsDiv">
-                    <Card v-for="movie in neverendingChristmas" :key="movie.id" :movie="movie" />
+                    <Card v-for="movie in neverendingChristmas.slice(0, neverendingChristmasCount)" :key="movie.id" :movie="movie" />
                 </div>
             </section>
 
+            <!-- Studio Ghibli LIST -->
             <section class="mb-6">
-                <h4 class="listTitle">Studio Ghibli</h4>
+                <div class="flex justify-between items-top mb-5">
+                    <h4 class="listTitle">Studio Ghibli</h4>
+                    <button v-if="this.studioGhibliMore == true" class=" pb-0 h-1" @click="loadMore('ghibli')">more</button>
+                    <button v-if="this.studioGhibliMore == false" class=" pb-0 h-1" @click="loadLess('ghibli')">less</button>                    
+                </div>
                 <div v-if="studioGhibli" class="listCardsDiv">
-                    <Card v-for="movie in studioGhibli" :key="movie.id" :movie="movie" />
+                    <Card v-for="movie in studioGhibli.slice(0, studioGhibliCount)" :key="movie.id" :movie="movie" />
                 </div>
             </section>
 
+            <!-- Old Hollywood LIST -->
             <section class="mb-6">
-                <h4 class="listTitle">Old Hollywood</h4>
+                <div class="flex justify-between items-top mb-5">
+                    <h4 class="listTitle">Old Hollywood</h4>
+                    <button v-if="this.oldHollywoodMore == true" class=" pb-0 h-1" @click="loadMore('hollywood')">more</button>
+                    <button v-if="this.oldHollywoodMore == false" class=" pb-0 h-1" @click="loadLess('hollywood')">less</button>                     
+                </div>
                 <div v-if="oldHollywood" class="listCardsDiv">
-                    <Card v-for="movie in oldHollywood" :key="movie.id" :movie="movie" />
+                    <Card v-for="movie in oldHollywood.slice(0, oldHollywoodCount)" :key="movie.id" :movie="movie" />
                 </div>
             </section>
         </section>
@@ -51,12 +78,28 @@
         components: { Searchbar, Card },
         data() {
             return {
+            // Lists data
             movies: null,
             comfortMovies: null,
             visuallyInsane:null,
             neverendingChristmas: null,
             studioGhibli:null,
             oldHollywood:null,
+
+            // Amount of films displayed
+            moviesCount: 4,
+            comfortMoviesCount:4,
+            visuallyInsaneCount:4,
+            neverendingChristmasCount: 4,
+            studioGhibliCount:4,
+            oldHollywoodCount:4,
+
+            // More/Less buttons checker
+            comfortMoviesMore:true,
+            visuallyInsaneMore:true,
+            neverendingChristmasMore: true,
+            studioGhibliMore:true,
+            oldHollywoodMore:true,
             };
         },
         mounted() {
@@ -72,7 +115,47 @@
             .catch(error => {
             console.error('Error fetching data:', error);
             });
+        },
+        methods:{
+            loadMore(genre){
+                if (genre === "comfort"){
+                    this.comfortMoviesCount+=6;
+                    this.comfortMoviesMore = false;
+                } else if(genre === "insane"){
+                    this.visuallyInsaneCount+=6;
+                    this.visuallyInsaneMore = false;
+                } else if(genre === "christmas"){
+                    this.neverendingChristmasCount +=6;
+                    this.neverendingChristmasMore = false;
+                } else if(genre === "ghibli"){
+                    this.studioGhibliCount+=6;
+                    this.studioGhibliMore = false
+                }else if(genre === "hollywood"){
+                    this.oldHollywoodCount+=6;
+                    this.oldHollywoodMore = false
+                }
+            },
+            loadLess(genre){
+                if(genre == "comfort"){
+                    this.comfortMoviesCount -=6
+                    this.comfortMoviesMore = true
+                } else if(genre === "insane"){
+                    this.visuallyInsaneCount-=6;
+                    this.visuallyInsaneMore = true;
+                } else if(genre === "christmas"){
+                    this.neverendingChristmasCount -=6;
+                    this.neverendingChristmasMore = true;
+                } else if(genre === "ghibli"){
+                    this.studioGhibliCount-=6;
+                    this.studioGhibliMore = true
+                } else if(genre === "hollywood"){
+                    this.oldHollywoodCount-=6;
+                    this.oldHollywoodMore = true
+                }
+ 
+            }
         }
+
     };
 </script>
     
