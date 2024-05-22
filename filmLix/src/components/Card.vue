@@ -14,7 +14,8 @@
 <script>
 export default {
    props: {
-      movie: Object
+      movie: Object,
+      firstGenre: String,
    }
 };
 </script>
