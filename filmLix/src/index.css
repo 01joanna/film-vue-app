@@ -40,6 +40,16 @@
     }
 
 
+    /* LISTS */
+    .listTitle{
+        @apply text-[28px] italic mb-4 text-customWhite 
+    }
+
+    .listCardsDiv{
+        @apply grid grid-cols-4 gap-4 items-center justify-center
+    }
+
+
 }
 
 @layer base{
