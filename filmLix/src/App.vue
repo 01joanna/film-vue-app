@@ -1,19 +1,17 @@
-<script >
-  import HeaderFeature from "./components/HeaderFeature.vue"
-  import Card from "./components/Card.vue"
-  import Carrusel from "./components/Carrusel.vue"
-  export default{
-    components:{ HeaderFeature , Card }
-  }
+
+<script setup>
+import { RouterView, RouterLink } from 'vue-router';
+import HeaderFeature from "./components/HeaderFeature.vue"
+import Footer from "./components/Footer.vue"
 </script>
 
 <template>
   <HeaderFeature/>
-    <body> 
-        <carrusel/>
-        <Card/>
-    </body>
-    
+  <main>
+    <RouterView />
+  </main>
+  <Footer/>
+  
 </template>
 
 <style >
