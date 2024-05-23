@@ -38,7 +38,8 @@ const router = createRouter({
     {
       path: '/random',
       name: 'random',
-      component: Random
+      component: Random,
+     /*  props: true */
     },
     {
       path: '/movie/:id',

@@ -50,6 +50,11 @@
     }
 
 
+    /* RANDOM */
+    .getRandomMovieButton{
+        @apply rounded-md bg-customWhite text-customBlack px-[10px] py-[2px] 
+    }
+
 }
 
 @layer base{
