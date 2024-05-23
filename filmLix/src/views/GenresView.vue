@@ -3,7 +3,7 @@
     <section class="firstHomepage">
       <Searchbar />
     </section>
-    <h3 class="text-[40px] gap-5 mb-10 mt-5 justify-center text-customWhite">
+    <h3 class="text-[40px] ml-[9rem] gap-5 mb-10 mt-5 justify-center text-customWhite">
       Genres
     </h3>
 
