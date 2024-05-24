@@ -80,11 +80,11 @@
             return {
             // Lists data
             movies: null,
-            comfortMovies: null,
-            visuallyInsane:null,
-            neverendingChristmas: null,
-            studioGhibli:null,
-            oldHollywood:null,
+            comfortMovies: [],
+            visuallyInsane:[],
+            neverendingChristmas: [],
+            studioGhibli:[],
+            oldHollywood:[],
 
             // Amount of films displayed
             moviesCount: 4,
@@ -103,14 +103,130 @@
             };
         },
         mounted() {
-        fetch('http://localhost:3000/lists')
+        fetch('http://localhost:3000/movies')
             .then(response => response.json())
             .then(data => {
-            this.comfortMovies = data[0].comfortMovies.slice(0, data[0].comfortMovies.length);
-            this.visuallyInsane = data[0].visuallyInsane.slice(0, data[0].visuallyInsane.length);
-            this.neverendingChristmas = data[0].neverendingChristmas.slice(0, data[0].neverendingChristmas.length);
-            this.studioGhibli = data[0].studioGhibli.slice(0, data[0].studioGhibli.length);
-            this.oldHollywood = data[0].oldHollywood.slice(0, data[0].oldHollywood.length);
+                
+                // filling comfort Movies list
+                for(let movieItem of data){
+                    if(movieItem.Title === "The Grand Budapest Hotel"){
+                        this.comfortMovies.push(movieItem)
+                    }else if(movieItem.Title ==="School of Rock"){
+                        this.comfortMovies.push(movieItem)
+                    }else if(movieItem.Title ==="Love Actually"){
+                        this.comfortMovies.push(movieItem)
+                    }else if(movieItem.Title ==="Pride & Prejudice"){
+                        this.comfortMovies.push(movieItem)
+                    }else if(movieItem.Title ==="Sing Street"){
+                        this.comfortMovies.push(movieItem)
+                    }else if(movieItem.Title ==="Moonrise Kingdom"){
+                        this.comfortMovies.push(movieItem)
+                    }else if(movieItem.Title ==="Scott Pilgrim vs. the World"){
+                        this.comfortMovies.push(movieItem)
+                    }else if(movieItem.Title ==="Amélie"){
+                        this.comfortMovies.push(movieItem)
+                    }else if(movieItem.Title ==="Forrest Gump"){
+                        this.comfortMovies.push(movieItem)
+                    }else if(movieItem.Title ==="The Parent Trap"){
+                        this.comfortMovies.push(movieItem)
+                    }
+                }
+                // filling visually Insane list
+                for(let movieItem of data){
+                    if(movieItem.Title ==="Blade Runner 2049"){
+                        this.visuallyInsane.push(movieItem)
+                    }else if(movieItem.Title ==="The Secret Life of Walter Mitty"){
+                        this.visuallyInsane.push(movieItem)
+                    }else if(movieItem.Title ==="The Matrix"){
+                        this.visuallyInsane.push(movieItem)
+                    }else if(movieItem.Title ==="Arrival"){
+                        this.visuallyInsane.push(movieItem)
+                    }else if(movieItem.Title ==="Her"){
+                        this.visuallyInsane.push(movieItem)
+                    }else if(movieItem.Title ==="Interstellar"){
+                        this.visuallyInsane.push(movieItem)
+                    }else if(movieItem.Title ==="TRON: Legacy"){
+                        this.visuallyInsane.push(movieItem)
+                    }else if(movieItem.Title ==="Avatar: The Way of Water"){
+                        this.visuallyInsane.push(movieItem)
+                    }else if(movieItem.Title ==="Drive"){
+                        this.visuallyInsane.push(movieItem)
+                    }else if(movieItem.Title ==="La La Land"){
+                        this.visuallyInsane.push(movieItem)
+                    }
+                }
+                // filling neverending Christmas list
+                for(let movieItem of data){
+                    if(movieItem.Title ==="Home Alone"){
+                        this.neverendingChristmas.push(movieItem)
+                    }else if(movieItem.Title ==="How the Grinch Stole Christmas!"){
+                        this.neverendingChristmas.push(movieItem)
+                    }else if(movieItem.Title ==="The Santa Clause 3: The Escape Clause"){
+                        this.neverendingChristmas.push(movieItem)
+                    }else if(movieItem.Title ==="Four Christmases"){
+                        this.neverendingChristmas.push(movieItem)
+                    }else if(movieItem.Title ==="Home Alone 2: Lost in New York"){
+                        this.neverendingChristmas.push(movieItem)
+                    }else if(movieItem.Title ==="Klaus"){
+                        this.neverendingChristmas.push(movieItem)
+                    }else if(movieItem.Title ==="A Christmas Tale"){
+                        this.neverendingChristmas.push(movieItem)
+                    }else if(movieItem.Title ==="Elf"){
+                        this.neverendingChristmas.push(movieItem)
+                    }else if(movieItem.Title ==="A Christmas Story Christmas"){
+                        this.neverendingChristmas.push(movieItem)
+                    }else if(movieItem.Title ==="Happy Christmas"){
+                        this.neverendingChristmas.push(movieItem)
+                    }
+                }
+                // filling studio Ghibli list
+                for(let movieItem of data){
+                    if(movieItem.Title ==="My Neighbor Totoro"){
+                        this.studioGhibli.push(movieItem)
+                    }else if(movieItem.Title ==="Kiki's Delivery Service"){
+                        this.studioGhibli.push(movieItem)
+                    }else if(movieItem.Title ==="Spirited Away"){
+                        this.studioGhibli.push(movieItem)
+                    }else if(movieItem.Title ==="Princess Mononoke"){
+                        this.studioGhibli.push(movieItem)
+                    }else if(movieItem.Title ==="Howl's Moving Castle"){
+                        this.studioGhibli.push(movieItem)
+                    }else if(movieItem.Title ==="The Boy and the Heron"){
+                        this.studioGhibli.push(movieItem)
+                    }else if(movieItem.Title ==="The Wind Rises"){
+                        this.studioGhibli.push(movieItem)
+                    }else if(movieItem.Title ==="Castle in the Sky"){
+                        this.studioGhibli.push(movieItem)
+                    }else if(movieItem.Title ==="Grave of the Fireflies"){
+                        this.studioGhibli.push(movieItem)
+                    }else if(movieItem.Title ==="Porco Rosso"){
+                        this.studioGhibli.push(movieItem)
+                    }
+                }
+                // filling old Hollywood list
+                for(let movieItem of data){
+                    if(movieItem.Title ==="Vertigo"){
+                        this.oldHollywood.push(movieItem)
+                    }else if(movieItem.Title ==="12 Angry Men"){
+                        this.oldHollywood.push(movieItem)
+                    }else if(movieItem.Title ==="Roman Holiday"){
+                        this.oldHollywood.push(movieItem)
+                    }else if(movieItem.Title ==="Some Like It Hot"){
+                        this.oldHollywood.push(movieItem)
+                    }else if(movieItem.Title ==="The Wizard of Oz"){
+                        this.oldHollywood.push(movieItem)
+                    }else if(movieItem.Title ==="Mary Poppins"){
+                        this.oldHollywood.push(movieItem)
+                    }else if(movieItem.Title ==="Rear Window"){
+                        this.oldHollywood.push(movieItem)
+                    }else if(movieItem.Title ==="Psycho"){
+                        this.oldHollywood.push(movieItem)
+                    }else if(movieItem.Title ==="Sabrina"){
+                        this.oldHollywood.push(movieItem)
+                    }else if(movieItem.Title ==="Casablanca"){
+                        this.oldHollywood.push(movieItem)
+                    }
+                }                
             })
             .catch(error => {
             console.error('Error fetching data:', error);
