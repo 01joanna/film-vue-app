@@ -1,5 +1,5 @@
 <template>
-        <nav class="md:flex md:justify-between md:items-center py-3 lg:px-28 bg-customGray">
+        <nav class="md:flex md:justify-between md:items-center py-3 lg:px-28 bg-customGray z-100">
             <div class=" mx-4 flex justify-between items-center">
                 <RouterLink to="/">
                     <img src="../assets/filmlix_logo.png" alt="">
