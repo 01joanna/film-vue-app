@@ -1,6 +1,12 @@
 <template>
-    <h1>My Movies</h1>
-    <watched-movies />
+    <section class="myMovies mx-20">
+        <h1 class="text-[32px] text-customWhite mt-10">My Movies</h1>
+        <div class="flex flex-col">
+            <WatchedMovies />
+            <FavoriteMovies />
+            <WatchlistMovies />
+        </div>
+    </section>
 </template>
     
 <script>
