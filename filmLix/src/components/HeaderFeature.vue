@@ -1,5 +1,5 @@
 <template>
-        <nav class="md:flex md:justify-between md:items-center py-3 lg:px-28 bg-customGray z-100">
+        <nav class="md:flex md:justify-between md:items-center py-3 lg:px-28 bg-customGray z-100 ">
             <div class=" mx-4 flex justify-between items-center">
                 <RouterLink to="/">
                     <img src="../assets/filmlix_logo.png" alt="">
@@ -10,11 +10,11 @@
                 </span>
             </div>
             <ul class="headerUl">
-                <li class="myLi "><RouterLink active-class="active" to="/allMovies">All movies</RouterLink></li>
-                <li class="myLi "><RouterLink active-class="active" to="/myMovies">My movies</RouterLink></li>
-                <li class="myLi "><RouterLink active-class="active" to="/genres">Genres</RouterLink></li>
-                <li class="myLi "><RouterLink active-class="active" to="/lists">Lists</RouterLink></li>
-                <li class="myLi"><RouterLink active-class="active" to="/random">Random</RouterLink></li>
+                <li class="myLi "><RouterLink active-class="activeHeaderLi" to="/allMovies">All movies</RouterLink></li>
+                <li class="myLi "><RouterLink active-class="activeHeaderLi" to="/myMovies">My movies</RouterLink></li>
+                <li class="myLi "><RouterLink active-class="activeHeaderLi" to="/genres">Genres</RouterLink></li>
+                <li class="myLi "><RouterLink active-class="activeHeaderLi" to="/lists">Lists</RouterLink></li>
+                <li class="myLi"><RouterLink active-class="activeHeaderLi" to="/random">Random</RouterLink></li>
                 
             </ul>
             
@@ -31,12 +31,14 @@ export default {
   methods: {
     burgerMenuFunc() {
       let list = document.querySelector("ul");
-      if (this.toggleMenu == false) {
+      if (this.toggleMenu === false) {
         list.style = "opacity:100";
-        this.toggleMenu = true;
+        this.toggleMenu = true; 
+        
       } else if (this.toggleMenu !== false) {
         list.style = "opacity:0";
         this.toggleMenu = false;
+        list.style = "z-index:-1";
       }
     },
   },

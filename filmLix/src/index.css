@@ -11,18 +11,18 @@
 
     /* HEADER */
     .headerUl{
-        @apply md:flex md:items-center z-[-1] md:z-auto  md:mt-0 md:static absolute
-        bg-customGray w-full left-0 md:w-auto md:py-0 py-4 md:pl-0  md:opacity-100 opacity-0 text-center 
+        @apply md:flex md:items-center md:z-auto  md:mt-0 md:static absolute
+        bg-customGray w-full left-0 md:w-auto md:py-0 py-4 md:pl-0  md:opacity-100 opacity-0  text-center 
         
     }
     .myLi{
-        @apply uppercase md:text-base text-customWhite tracking-wide active:scale-95 mx-4 my-6 md:my-0 text-2xl
+        @apply uppercase md:text-base block text-customWhite tracking-wide active:scale-95 mx-4 my-6 md:my-0 text-2xl
     }
     .burgerMenu{
-        @apply text-customWhite text-4xl cursor-pointer md:hidden block mx-2
+        @apply text-customWhite text-4xl cursor-pointer md:hidden mx-2
     } 
 
-    .active {
+    .activeHeaderLi {
         @apply border-b-2  pb-1
     }
     
