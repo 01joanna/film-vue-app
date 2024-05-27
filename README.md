@@ -50,6 +50,23 @@ json-server --watch db.json
 npm run serve
 ```
 
+## Development Methodologies
+We used the following methodologies to organize and streamline our development process:
+
+### Kanban: 
+For team organization and task management.
+### Pair Programming: 
+For collaborative coding and problem-solving.
+### Design Process
+We began by creating low-fidelity wireframes and a design prototype using Figma:
+
+#### Low-Fidelity Wireframes: 
+Initial sketches and layouts to plan the structure and user flow.
+#### Figma Prototype: 
+Detailed design prototype to visualize the final look and feel of the application.
+
+<img width="956" alt="Captura de pantalla 2024-05-27 a las 13 12 20" src="https://github.com/01joanna/film-vue-app/assets/122264533/d6db0aae-495c-4248-93dc-2a2851ffa31c">
+
 ## Usage
 
 ### Browse Movies
@@ -60,6 +77,26 @@ Click the heart icon on a movie to save it to your favorites list.
 Access your favorite movies through the favorites link in the navigation bar.
 ### Random Movies
 Click the "Random Movies" button to receive a surprise recommendation.
+
+## HOME
+![Captura de pantalla 2024-05-27 a las 13 15 23](https://github.com/01joanna/film-vue-app/assets/122264533/f0ea3189-ccf7-452c-995b-be2ec045e604)
+![Captura de pantalla 2024-05-27 a las 13 23 00](https://github.com/01joanna/film-vue-app/assets/122264533/d58683bc-3d5b-498c-8b38-4c00c21abf5a)
+## All Movies
+![Captura de pantalla 2024-05-27 a las 11 39 21](https://github.com/01joanna/film-vue-app/assets/122264533/427512a1-8240-4c86-86ae-d4f4515f6878)
+## My Movies
+![Captura de pantalla 2024-05-27 a las 13 18 39](https://github.com/01joanna/film-vue-app/assets/122264533/d343979b-37dd-4bc2-9b50-e8e018354a1c)
+## Genres
+![Captura de pantalla 2024-05-27 a las 13 18 39](https://github.com/01joanna/film-vue-app/assets/122264533/a736074e-43ce-405a-9e0e-0899d4900c95)
+## Lists
+![Captura de pantalla 2024-05-27 a las 13 21 06](https://github.com/01joanna/film-vue-app/assets/122264533/4d28d4a5-74e5-46c2-9285-9be59e19eb6e)
+## Random
+![Captura de pantalla 2024-05-27 a las 13 22 02](https://github.com/01joanna/film-vue-app/assets/122264533/602fc67c-2f91-47d8-995f-996c5d54a591)
+
+
+
+
+
+
 ### Project Structure
 
 --src/
