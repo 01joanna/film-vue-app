@@ -53,6 +53,10 @@
         @apply  grid lg:grid-cols-4 gap-y-4 gap-x-[100px] md:grid-cols-2 /* grid grid-cols-4 gap-x-8 gap-y-4 items-center justify-between */
     }
 
+    .genresMapLi{
+        @apply mb-4
+    }
+
 
     /* RANDOM */
     .getRandomMovieButton{
