@@ -30,7 +30,7 @@
         </div>
 
         <div class="cardsDiv">
-          <Card v-for="movie in actionMovies.slice(0, actionCount)" :key="movie.id":movie="movie"/>
+          <Card v-for="movie in actionMovies.slice(0, actionCount)" :key="movie.id" :movie="movie"/>
         </div>
       </section>
 
