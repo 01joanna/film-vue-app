@@ -8,7 +8,7 @@
     <section class="flex flex-col gap-5 mt-10 mb-20 justify-center px-28 items-center ">
       <h3 class="text-[40px] text-customWhite w-full md:pl-6 text-left">Genres</h3>
 
-      <ul class="md:flex gap-5 ">
+      <ul class="md:flex gap-5 justify-center items-center">
         <li class="genresMapLi"><a href="#comedyId" >Comedy</a></li>
         <li class="genresMapLi"><a href="#actionId" >Action</a></li>
         <li class="genresMapLi"><a href="#fantasyId" >Fantasy</a></li>
@@ -17,7 +17,7 @@
         <li class="genresMapLi"><a href="#dramaId" >Drama</a></li>
         <li class="genresMapLi"><a href="#documentaryId" >Documentary</a></li>
         <li class="genresMapLi"><a href="#animationId" >Animation</a></li>
-        <li><a href="#familyId">Family</a></li>
+        <li class="genresMapLi"><a href="#familyId">Family</a></li>
       </ul>
 
       <!-- Comedy Section -->
