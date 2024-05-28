@@ -2,38 +2,34 @@ import { defineStore } from "pinia";
 
 export const useMoviesStore = defineStore("movies", {
     state: () => ({
-        watchedMovies: JSON.parse(localStorage.getItem('watchedMovies')) || [],
-        favoriteMovies: JSON.parse(localStorage.getItem('favoriteMovies')) || [],
-        watchlistMovies: JSON.parse(localStorage.getItem('watchlistMovies')) || [],
+        watchedMovies: [],
+        favoriteMovies: [],
+        watchlistMovies: [],
     }),
     actions: {
-        addWatchedMovie(movie) {
-            if (!this.watchedMovies.find((m) => m.id === movie.id)) {
+        addOrRemoveWatchedMovie(movie) {
+            const index = this.watchedMovies.findIndex((m) => m.id === movie.id);
+            if (index === -1) {
                 this.watchedMovies.push(movie);
-                this.removeFromWatchlist(movie);
-                this.saveToLocalStorage();
+            } else {
+                this.watchedMovies.splice(index, 1);
             }
         },
-        addFavoriteMovie(movie) {
-            if (!this.favoriteMovies.find((m) => m.id === movie.id)) {
+        addOrRemoveFavoriteMovie(movie) {
+            const index = this.favoriteMovies.findIndex((m) => m.id === movie.id);
+            if (index === -1) {
                 this.favoriteMovies.push(movie);
-                this.saveToLocalStorage();
+            } else {
+                this.favoriteMovies.splice(index, 1);
             }
         },
-        addWatchlistMovie(movie) {
-            if (!this.watchlistMovies.find((m) => m.id === movie.id)) {
+        addOrRemoveWatchlistMovie(movie) {
+            const index = this.watchlistMovies.findIndex((m) => m.id === movie.id);
+            if (index === -1) {
                 this.watchlistMovies.push(movie);
-                this.saveToLocalStorage();
+            } else {
+                this.watchlistMovies.splice(index, 1);
             }
-        },
-        saveToLocalStorage() {
-            localStorage.setItem('watchedMovies', JSON.stringify(this.watchedMovies));
-            localStorage.setItem('favoriteMovies', JSON.stringify(this.favoriteMovies));
-            localStorage.setItem('watchlistMovies', JSON.stringify(this.watchlistMovies));
-        },
-        removeFromWatchlist(movie) {
-            this.watchlistMovies = this.watchlistMovies.filter((m) => m.id !== movie.id);
-            this.saveToLocalStorage();
         },
         isWatched(movie) {
             return this.watchedMovies.some((m) => m.id === movie.id);
@@ -43,6 +39,6 @@ export const useMoviesStore = defineStore("movies", {
         },
         isInWatchlist(movie) {
             return this.watchlistMovies.some((m) => m.id === movie.id);
-        }
+        },
     },
 });

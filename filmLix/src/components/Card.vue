@@ -5,13 +5,13 @@
             class="rounded-lg hover:translate-x-1 hover:-translate-y-1 duration-200 w-[300px] h-[85%]" alt="">
       </router-link>
       <div class="w-full h-12 flex justify-around items-center text-xl">
-         <a @click.prevent="addToWatchedMovies">
+         <a @click.prevent="toggleWatchedMovie">
             <i class="fa-regular fa-eye cardIcon" :style="{ color: isWatched ? 'green' : 'black' }"></i>
          </a>
-         <a @click.prevent="addToFavoriteMovies">
+         <a @click.prevent="toggleFavoriteMovie">
             <i class="fa-regular fa-heart cardIcon" :style="{ color: isFavorite ? 'red' : 'black' }"></i>
          </a>
-         <a @click.prevent="addToWatchlistMovies">
+         <a @click.prevent="toggleWatchlistMovie">
             <i class="fa-regular fa-bookmark cardIcon" :style="{ color: isInWatchlist ? 'blue' : 'black' }"></i>
          </a>
       </div>
@@ -33,25 +33,28 @@ export default {
       const isFavorite = computed(() => store.isFavorite(props.movie));
       const isInWatchlist = computed(() => store.isInWatchlist(props.movie));
 
-      const addToWatchedMovies = () => {
-         store.addWatchedMovie(props.movie);
-         alert('Film added to your watched movies list');
+      const toggleWatchedMovie = () => {
+         store.addOrRemoveWatchedMovie(props.movie);
+         const action = isWatched.value ? 'added to' : 'removed from';
+         alert(`Film ${action} your watched movies list`);
       };
 
-      const addToFavoriteMovies = () => {
-         store.addFavoriteMovie(props.movie);
-         alert('Film added to your favorite movies list');
+      const toggleFavoriteMovie = () => {
+         store.addOrRemoveFavoriteMovie(props.movie);
+         const action = isFavorite.value ? 'added to' : 'removed from';
+         alert(`Film ${action} your favorite movies list`);
       };
 
-      const addToWatchlistMovies = () => {
-         store.addWatchlistMovie(props.movie);
-         alert('Film added to your watchlist movies list');
+      const toggleWatchlistMovie = () => {
+         store.addOrRemoveWatchlistMovie(props.movie);
+         const action = isInWatchlist.value ? 'added to' : 'removed from';
+         alert(`Film ${action} your watchlist movies list`);
       };
 
       return {
-         addToWatchedMovies,
-         addToFavoriteMovies,
-         addToWatchlistMovies,
+         toggleWatchedMovie,
+         toggleFavoriteMovie,
+         toggleWatchlistMovie,
          isWatched,
          isFavorite,
          isInWatchlist
