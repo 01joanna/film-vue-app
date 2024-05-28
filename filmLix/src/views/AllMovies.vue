@@ -1,13 +1,13 @@
 <template>
   <div>
     <section>
-      <Searchbar v-model="searchQuery" />
+      <Searchbar @search="updateSearchQuery" />
     </section>
     
     <section class="flex flex-col gap-5 mb-20 justify-center items-center mt-10 mx-10 ">
-    <div>
-      <h3 class="text-[40px] text-customWhite w-full pl-6 text-left">All movies</h3>
-    </div>
+      <div>
+        <h3 class="text-[40px] text-customWhite w-full pl-6 text-left">All movies</h3>
+      </div>
       <!-- All Movies -->
       <section class="mb-6">
         <div class="grid lg:grid-cols-4 gap-10 md:grid-cols-2">
@@ -49,8 +49,12 @@ export default {
         console.error("Error loading movies:", error);
       }
     },
-  },
+    updateSearchQuery(query) {
+      this.searchQuery = query;
+    }
+  }
 };
 </script>
 <style scoped>
 </style>
+
