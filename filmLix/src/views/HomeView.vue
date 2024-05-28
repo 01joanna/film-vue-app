@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="firstHomepage">
-      <Searchbar />
+      <Searchbar @search="handleSearch"/>
       <Carrusel />
     </section>
     <section class="secondHomepage flex flex-col gap-5 mb-20 justify-center items-center">
@@ -22,20 +22,33 @@ export default {
   components: { Carrusel, Searchbar, Card },
   data() {
     return {
-      movies: null
+      movies: []
     };
   },
   mounted() {
-  fetch('http://localhost:3000/movies')
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      this.movies = data.sort((a, b) => new Date(b.Released) - new Date(a.Released)).slice(0, 8);
-    })
-    .catch(error => {
-      console.error('Error fetching data:', error);
-    });
-}
+    this.fetchMovies();
+  },
+  methods: {
+    fetchMovies() {
+      fetch('http://localhost:3000/movies')
+        .then(response => response.json())
+        .then(data => {
+          this.movies = data.sort((a, b) => new Date(b.Released) - new Date(a.Released));
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+    },
+    handleSearch(searchQuery) {
+      const normalizedQuery = searchQuery.toLowerCase();
+      const movie = this.movies.find(movie => movie.Title.toLowerCase().includes(normalizedQuery));
+      if (movie) {
+        this.$router.push({ name: 'MovieDetails', params: { id: movie.id } });
+      } else {
+        alert('Movie not found');
+      }
+    }
+  }
 };
 </script>
 
