@@ -133,7 +133,7 @@ Open a pull request.
 ### Authors
 johanna cuevas- [Github](https://github.com/01joanna)   
 Evgenii Igoshin - [GitHub](https://github.com/Johnny-the-great)   
-Cecilia - [GitHub](https://github.com/CeciliaB22)   
+Cecilia Balaban - [GitHub](https://github.com/CeciliaB22)   
 Arleny Medina - [GitHub](https://github.com/ArlenyAres)   
 
 
