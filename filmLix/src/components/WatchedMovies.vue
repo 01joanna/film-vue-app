@@ -8,7 +8,7 @@
     </div>
     <section class="secondHomepage flex flex-col gap-5 mb-20 justify-center items-center">
       <div class="grid lg:grid-cols-4 gap-10 md:grid-cols-2" v-if="watchedMovies.length > 0">
-        <Card v-for="(movie, index) in watchedMovies.slice(0, watchedMoviesCount)" :key="movie.id" :movie="movie" />
+        <Card v-for="(movie) in watchedMovies.slice(0, watchedMoviesCount)" :key="movie.id" :movie="movie" />
       </div>
       <p v-else class="text-xl text-customWhite">You still haven't added any movies to the watched list</p>
     </section>
