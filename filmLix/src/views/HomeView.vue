@@ -22,23 +22,20 @@ export default {
   components: { Carrusel, Searchbar, Card },
   data() {
     return {
-      movies: []
+      movies: null,
     };
   },
   mounted() {
-    this.fetchMovies();
-  },
-  methods: {
-    fetchMovies() {
-      fetch('http://localhost:3000/movies')
+    fetch('http://localhost:3000/movies')
         .then(response => response.json())
         .then(data => {
-          this.movies = data.sort((a, b) => new Date(b.Released) - new Date(a.Released));
+          this.movies = data.sort((a, b) => new Date(b.Released) - new Date(a.Released)).slice(0, 8);
         })
         .catch(error => {
           console.error('Error fetching data:', error);
         });
-    },
+  },
+  methods: {
     handleSearch(searchQuery) {
       const normalizedQuery = searchQuery.toLowerCase();
       const movie = this.movies.find(movie => movie.Title.toLowerCase().includes(normalizedQuery));
