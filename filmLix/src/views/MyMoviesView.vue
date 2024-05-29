@@ -1,7 +1,7 @@
 <template>
-    <section class="myMovies mx-20">
-        <h1 class="text-[32px] text-customWhite mt-10">My Movies</h1>
-        <div class="flex flex-col">
+    <section class="myMovies mx-24">
+        <h3 class="text-[40px] text-customWhite mt-10 px-20 w-full md:pl-6 text-left">My Movies</h3>
+        <div class="flex flex-col mt-5 ">
             <WatchedMovies />
             <FavoriteMovies />
             <WatchlistMovies />
