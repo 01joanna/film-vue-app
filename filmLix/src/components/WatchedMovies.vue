@@ -2,7 +2,7 @@
   <div>
     <div class="flex justify-between items-center mb-5 mx-[13rem]">
       <h2 class="text-2xl">Watched Movies</h2>
-      <h4 class="text-md text-customWhite cursor-pointer" @click="loadMore()" v-if="watchedMovies.length > 0">
+      <h4 class="text-md text-customWhite cursor-pointer" @click="loadMore()" v-if="watchedMovies.length > watchedMoviesCount">
         more
       </h4>
     </div>

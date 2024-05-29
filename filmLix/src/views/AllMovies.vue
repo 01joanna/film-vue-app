@@ -4,12 +4,12 @@
       <Searchbar @search="updateSearchQuery" />
     </section>
     
-    <section class="flex flex-col gap-5 mb-20 justify-center items-center mt-10 mx-10 ">
-      <div>
-        <h3 class="text-[40px] text-customWhite w-full pl-6 text-left">All movies</h3>
-      </div>
+    <section class="flex flex-col gap-5 mb-20 justify-center items-center mt-5 px-28 ">
+      
+      <h3 class="text-[40px] text-customWhite w-full md:pl-6 text-left">All movies</h3>
+     
       <!-- All Movies -->
-      <section class="mb-6">
+      <section class="mb-6 mt-5">
         <div class="grid lg:grid-cols-4 gap-10 md:grid-cols-2">
           <Card v-for="movie in filteredMovies" :key="movie.id" :movie="movie" /> 
         </div>

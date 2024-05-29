@@ -1,10 +1,11 @@
+// En tu tienda de Pinia
 import { defineStore } from "pinia";
 
 export const useMoviesStore = defineStore("movies", {
     state: () => ({
-        watchedMovies: [],
-        favoriteMovies: [],
-        watchlistMovies: [],
+        watchedMovies: JSON.parse(localStorage.getItem('watchedMovies')) || [],
+        favoriteMovies: JSON.parse(localStorage.getItem('favoriteMovies')) || [],
+        watchlistMovies: JSON.parse(localStorage.getItem('watchlistMovies')) || [],
     }),
     actions: {
         addOrRemoveWatchedMovie(movie) {
@@ -14,6 +15,7 @@ export const useMoviesStore = defineStore("movies", {
             } else {
                 this.watchedMovies.splice(index, 1);
             }
+            localStorage.setItem('watchedMovies', JSON.stringify(this.watchedMovies));
         },
         addOrRemoveFavoriteMovie(movie) {
             const index = this.favoriteMovies.findIndex((m) => m.id === movie.id);
@@ -22,6 +24,7 @@ export const useMoviesStore = defineStore("movies", {
             } else {
                 this.favoriteMovies.splice(index, 1);
             }
+            localStorage.setItem('favoriteMovies', JSON.stringify(this.favoriteMovies));
         },
         addOrRemoveWatchlistMovie(movie) {
             const index = this.watchlistMovies.findIndex((m) => m.id === movie.id);
@@ -30,6 +33,7 @@ export const useMoviesStore = defineStore("movies", {
             } else {
                 this.watchlistMovies.splice(index, 1);
             }
+            localStorage.setItem('watchlistMovies', JSON.stringify(this.watchlistMovies));
         },
         isWatched(movie) {
             return this.watchedMovies.some((m) => m.id === movie.id);
