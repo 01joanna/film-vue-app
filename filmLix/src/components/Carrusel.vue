@@ -1,5 +1,5 @@
 <template>
-  <Carousel :autoplay="2000" :wrap-around="true">
+  <Carousel :autoplay="2000" :wrap-around="true" >
     <Slide v-for="(image, index) in images" :key="index">
       <img :src="image.src" :alt="image.alt" class="carousel__item">
     </Slide>
@@ -43,6 +43,7 @@ export default defineComponent({
   object-fit: cover;
   margin: 2.5rem 2.5rem 0rem; 
   border-radius: 2rem;
+  z-index: 40;
 }
 
 </style>

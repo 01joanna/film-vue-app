@@ -24,7 +24,7 @@
         </div>
     </div>
         <div class="flex flex-col justify-center items-center my-4 text-xs">
-         <div><p>Project by Johanna, Evgenii, Arleny, Cecilia, Ana </p></div>
+         <div><p>Project by Johanna, Evgenii, Arleny, Cecilia</p></div>
          <div><p> Filmlix © 2024</p></div>
         </div>
    

@@ -1,4 +1,3 @@
-
 import { defineStore } from "pinia";
 
 export const useMoviesStore = defineStore("movies", {
@@ -8,20 +7,38 @@ export const useMoviesStore = defineStore("movies", {
         watchlistMovies: [],
     }),
     actions: {
-        addWatchedMovie(movie) {
-            if (!this.watchedMovies.find((m) => m.id === movie.id)) {
+        addOrRemoveWatchedMovie(movie) {
+            const index = this.watchedMovies.findIndex((m) => m.id === movie.id);
+            if (index === -1) {
                 this.watchedMovies.push(movie);
+            } else {
+                this.watchedMovies.splice(index, 1);
             }
         },
-        addFavoriteMovie(movie) {
-            if (!this.favoriteMovies.find((m) => m.id === movie.id)) {
+        addOrRemoveFavoriteMovie(movie) {
+            const index = this.favoriteMovies.findIndex((m) => m.id === movie.id);
+            if (index === -1) {
                 this.favoriteMovies.push(movie);
+            } else {
+                this.favoriteMovies.splice(index, 1);
             }
         },
-        addWatchlistMovie(movie) {
-            if (!this.watchlistMovies.find((m) => m.id === movie.id)) {
+        addOrRemoveWatchlistMovie(movie) {
+            const index = this.watchlistMovies.findIndex((m) => m.id === movie.id);
+            if (index === -1) {
                 this.watchlistMovies.push(movie);
+            } else {
+                this.watchlistMovies.splice(index, 1);
             }
+        },
+        isWatched(movie) {
+            return this.watchedMovies.some((m) => m.id === movie.id);
+        },
+        isFavorite(movie) {
+            return this.favoriteMovies.some((m) => m.id === movie.id);
+        },
+        isInWatchlist(movie) {
+            return this.watchlistMovies.some((m) => m.id === movie.id);
         },
     },
 });

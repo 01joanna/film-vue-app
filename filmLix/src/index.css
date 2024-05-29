@@ -11,7 +11,7 @@
 
     /* HEADER */
     .headerUl{
-        @apply md:flex md:items-center md:z-auto  md:mt-0 md:static absolute
+        @apply md:flex md:items-center md:z-auto z-30 md:mt-0 md:static absolute
         bg-customGray w-full left-0 md:w-auto md:py-0 py-4 md:pl-0  md:opacity-100 opacity-0  text-center 
         
     }
@@ -51,6 +51,10 @@
 
     .cardsDiv{
         @apply  grid lg:grid-cols-4 gap-y-4 gap-x-[100px] md:grid-cols-2 /* grid grid-cols-4 gap-x-8 gap-y-4 items-center justify-between */
+    }
+
+    .genresMapLi{
+        @apply mb-4 bg-customGray py-2 px-5 rounded-md
     }
 
 

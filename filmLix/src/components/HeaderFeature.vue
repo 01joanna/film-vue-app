@@ -1,5 +1,5 @@
 <template>
-        <nav class="md:flex md:justify-between md:items-center py-3 lg:px-28 bg-customGray z-100 ">
+        <nav class="md:flex md:justify-between md:items-center py-3 lg:px-28 bg-customGray z-30 ">
             <div class=" mx-4 flex justify-between items-center">
                 <RouterLink to="/">
                     <img src="../assets/filmlix_logo.png" alt="">
@@ -34,6 +34,7 @@ export default {
       if (this.toggleMenu === false) {
         list.style = "opacity:100";
         this.toggleMenu = true; 
+        
         
       } else if (this.toggleMenu !== false) {
         list.style = "opacity:0";

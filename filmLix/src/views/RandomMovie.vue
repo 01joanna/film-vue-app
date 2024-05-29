@@ -2,7 +2,7 @@
 
     <!-- RANDOM BUTTON -->
     <div class="flex justify-center mt-10 w-full">
-        <button @click="pushRand()" class="getRandomMovieButton">Click to get a random fim</button> 
+        <button @click="pushRand()" class="getRandomMovieButton">Click to get a random film</button> 
     </div>
   
     <!-- RANDOM MOVIE SECTION -->
