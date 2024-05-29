@@ -6,10 +6,10 @@
         v-model="search"
         type="text"
         placeholder="Search for movies"
-        class="text-white bg-customDarkPurple w-4/5 border-b-2 border-b-customBlack mt-10 mx-10"/>
+        class="text-customWhite bg-customDarkPurple w-[60%] border-b border-b-customWhite mt-10 mx-10"/>
         <button
         @click="getSearchMovies"
-        class="text-white bg-customGray  hover:scale-95 border-b-2 border-b-customBlack mt-10 mx-10 rounded-full py-2 px-2">Search</button>
+        class="text-white bg-customGray  hover:scale-95 border-b-2 border-b-customBlack mt-10 rounded-full py-1 px-14">Search</button>
     </div>
 </template>
 
