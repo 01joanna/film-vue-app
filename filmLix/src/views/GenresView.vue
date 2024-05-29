@@ -8,7 +8,7 @@
     <section class="flex flex-col gap-5 mt-10 mb-20 justify-center px-28 items-center ">
       <h3 class="text-[40px] text-customWhite w-full md:pl-6 text-left">Genres</h3>
 
-      <ul class="md:flex gap-5 justify-center items-center">
+      <ul class="md:flex gap-2 px-10 justify-center items-center">
         <li class="genresMapLi"><a href="#comedyId" >Comedy</a></li>
         <li class="genresMapLi"><a href="#actionId" >Action</a></li>
         <li class="genresMapLi"><a href="#fantasyId" >Fantasy</a></li>
