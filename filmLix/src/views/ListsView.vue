@@ -1,8 +1,5 @@
 <template>
     <div>
-        <section>
-            <Searchbar />
-        </section>
         
         <section class="flex flex-col gap-5 mt-10 mb-20 justify-center px-28 items-center ">
             <h3 class="text-[40px] text-customWhite w-full pl-6 text-left">Lists</h3>
